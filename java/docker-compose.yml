@@ -8,8 +8,9 @@ services:
     environment:
       EULA: "TRUE"
       allow-flight: "TRUE"
-      difficulty: "easy"
-      gamemode: "creative"
+      DIFFICULTY: "peaceful"
+      MODE: "creative"
+      GAMEMODE: "creative"
 
     restart: always
     volumes:
