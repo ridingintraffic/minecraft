@@ -3,6 +3,12 @@ services:
     image: itzg/minecraft-bedrock-server
     environment:
       EULA: "TRUE"
+      allow-flight: "TRUE"
+      DIFFICULTY: "peaceful"
+      MODE: "creative"
+      GAMEMODE: "creative"
+      ENABLE_RCON: "false"
+
     ports:
       - "19132:19132/udp"
     volumes:
