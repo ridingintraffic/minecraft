@@ -11,6 +11,7 @@ services:
       DIFFICULTY: "peaceful"
       MODE: "creative"
       GAMEMODE: "creative"
+      ENABLE_RCON: "false"
 
     restart: always
     volumes:
