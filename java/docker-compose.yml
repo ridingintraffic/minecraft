@@ -7,6 +7,11 @@ services:
       - "25565:25565"
     environment:
       EULA: "TRUE"
+      allow-flight: "TRUE"
+      difficulty: "easy"
+      gamemode: "creative"
+
+    restart: always
     volumes:
       # attach the relative directory 'data' to the container's /data path
       - /files-nas20/files/minecraft/java/data:/data
