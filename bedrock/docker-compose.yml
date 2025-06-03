@@ -1,16 +1,16 @@
 services:
   bds:
     image: itzg/minecraft-bedrock-server
+    container_name: bds
     environment:
       EULA: "TRUE"
-      allow-flight: "TRUE"
-      DIFFICULTY: "peaceful"
-      MODE: "creative"
-      GAMEMODE: "creative"
-    restart: always
+      GAMEMODE: "creative"        # correct for Bedrock
+      DIFFICULTY: "peaceful"      # also valid for Bedrock
+      allow-flight: "true"
     ports:
       - "19132:19132/udp"
     volumes:
       - /files-nas20/files/minecraft/bedrock/data:/data
+    restart: always
     stdin_open: true
     tty: true
