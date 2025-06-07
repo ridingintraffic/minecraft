@@ -7,6 +7,7 @@ services:
       GAMEMODE: "creative"        # correct for Bedrock
       DIFFICULTY: "peaceful"      # also valid for Bedrock
       allow-flight: "true"
+      ENABLE_CHEATS: "true"
     ports:
       - "19132:19132/udp"
     volumes:
