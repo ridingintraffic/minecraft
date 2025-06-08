@@ -12,6 +12,8 @@ services:
       MODE: "creative"
       GAMEMODE: "creative"
       ENABLE_RCON: "false"
+      ENABLE_CHEATS: "true"
+ 
 
     restart: always
     volumes:
