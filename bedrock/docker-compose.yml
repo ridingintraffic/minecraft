@@ -8,6 +8,7 @@ services:
       DIFFICULTY: "peaceful"      # also valid for Bedrock
       allow-flight: "true"
       ENABLE_CHEATS: "true"
+      ALLOW_LIST_USERS: "ridingintraffic:979dcf0297df3ab7,claracorn4105:87b61eab4e67a2f6,lukey2894:6dd23a63ddd61554"
     ports:
       - "19132:19132/udp"
     volumes:
