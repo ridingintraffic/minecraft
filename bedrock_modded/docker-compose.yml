@@ -1,7 +1,7 @@
 services:
   bds:
     image: itzg/minecraft-bedrock-server
-    container_name: bds
+    container_name: bds_modded
     environment:
       EULA: "TRUE"
       GAMEMODE: "creative"        # correct for Bedrock
