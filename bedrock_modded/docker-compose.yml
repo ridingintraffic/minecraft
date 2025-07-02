@@ -1,7 +1,7 @@
 services:
   bds:
     image: itzg/minecraft-bedrock-server
-    container_name: bds_modded
+    container_name: bds_mods
     environment:
       EULA: "TRUE"
       GAMEMODE: "creative"        # correct for Bedrock
@@ -10,9 +10,9 @@ services:
       ENABLE_CHEATS: "true"
       OPS: "979dcf0297df3ab7" 
     ports:
-      - "19132:19132/udp"
+      - "19142:19132/udp"
     volumes:
-      - /files-nas20/files/minecraft/bedrock_modded/data:/data
+      - /files-nas20/files/minecraft/bedrock_mods/data:/data
     restart: always
     stdin_open: true
     tty: true
