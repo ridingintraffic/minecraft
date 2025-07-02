@@ -34,4 +34,4 @@ services:
     volumes:
       # Backup config (YAML, schedules, etc.)
       - /files-nas20/files/minecraft/backups/bedrock_mods/config:/config
-      - /files-nas20/files/minecraft/backups/bedrock_mods/backup:/data
+      - /files-nas20/files/minecraft/bedrock_mods/data:/data
