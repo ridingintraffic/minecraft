@@ -1,17 +1,15 @@
 containers:
   bedrock:
-   - name: bds_mods
-     ssh: bds_mods:2222
-     passwordFile: /files-nas20/files/minecraft/bedrock_mods/.remote-console.yaml
-     worlds:
-       - "/files-nas20/files/minecraft/bedrock_mods/data/worlds/bedrock_level"
-   
-  trim:
-    trimDays: 4
-    keepDays: 28
-    minKeep: 2
+    - name: bds_mods
+      ssh: bds_mods:2222
+      passwordFile: /files-nas20/files/minecraft/bedrock_mods/.remote-console.yaml
+      worlds:
+        - "/data/worlds/bedrock_level"
 
-  # Every three hours
-  schedule:
-    interval: 3h
+trim:
+  trimDays: 4
+  keepDays: 28
+  minKeep: 2
 
+schedule:
+  interval: 3h

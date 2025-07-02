@@ -1,14 +1,16 @@
+version: "3.8"
+
 services:
   bds:
     image: itzg/minecraft-bedrock-server
     container_name: bds_mods
     environment:
       EULA: "TRUE"
-      GAMEMODE: "creative"        # correct for Bedrock
-      DIFFICULTY: "peaceful"      # also valid for Bedrock
+      GAMEMODE: "creative"        # Bedrock-compatible
+      DIFFICULTY: "peaceful"      # Bedrock-compatible
       allow-flight: "true"
       ENABLE_CHEATS: "true"
-      OPS: "979dcf0297df3ab7" 
+      OPS: "979dcf0297df3ab7"
     ports:
       - "19142:19132/udp"
     expose:
@@ -18,19 +20,16 @@ services:
     restart: always
     stdin_open: true
     tty: true
+
   backup:
     image: kaiede/minecraft-bedrock-backup
+    container_name: backup_mods
     restart: always
     depends_on:
-      # Make sure the minecraft service starts before the backup
       - "bds"
     environment:
-        # Without this, your log timestamps will be in the GMT timezone.
-        TZ: "America/Chicago"
+      TZ: "America/Chicago"
     volumes:
-      # (Optional) Map a configuration folder separately from the backups.
+      # Backup config (YAML, schedules, etc.)
       - /files-nas20/files/minecraft/backups/bedrock_mods/config:/config
-      # Map your backups folder into /data
-      -  /files-nas20/files/minecraft/backups/bedrock_mods/backup:/data
-      # Map your server's data folder wherever you like
       - /files-nas20/files/minecraft/bedrock_mods/data:/data
