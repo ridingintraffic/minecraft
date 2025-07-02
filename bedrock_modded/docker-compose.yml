@@ -11,6 +11,7 @@ services:
       allow-flight: "true"
       ENABLE_CHEATS: "true"
       OPS: "979dcf0297df3ab7"
+      ENABLE_SSH: "TRUE"
     ports:
       - "19142:19132/udp"
       - "2222:2222"
