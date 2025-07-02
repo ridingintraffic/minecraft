@@ -13,6 +13,7 @@ services:
       OPS: "979dcf0297df3ab7"
     ports:
       - "19142:19132/udp"
+      - "2222:2222"
     expose:
       - 2222
     volumes:
