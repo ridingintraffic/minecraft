@@ -11,8 +11,26 @@ services:
       OPS: "979dcf0297df3ab7" 
     ports:
       - "19142:19132/udp"
+    expose:
+      - 2222
     volumes:
       - /files-nas20/files/minecraft/bedrock_mods/data:/data
     restart: always
     stdin_open: true
     tty: true
+  backup:
+    image: kaiede/minecraft-bedrock-backup
+    restart: always
+    depends_on:
+      # Make sure the minecraft service starts before the backup
+      - "bds"
+    environment:
+        # Without this, your log timestamps will be in the GMT timezone.
+        TZ: "America/Chicago"
+    volumes:
+      # (Optional) Map a configuration folder separately from the backups.
+      - /files-nas20/files/minecraft/backups/bedrock_mods/config:/config
+      # Map your backups folder into /data
+      -  /files-nas20/files/minecraft/backups/bedrock_mods/backup:/data
+      # Map your server's data folder wherever you like
+      - /files-nas20/files/minecraft/bedrock_mods/data:/data
