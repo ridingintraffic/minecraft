@@ -2,7 +2,7 @@ containers:
   bedrock:
     - name: bds_mods
       ssh: bds_mods:2222
-      passwordFile: /files-nas20/files/minecraft/bedrock_mods/.remote-console.yaml
+      passwordFile: /files-nas20/files/minecraft/bedrock_mods/data/.remote-console.yaml
       worlds:
         - "/data/worlds/bedrock_level"
 
