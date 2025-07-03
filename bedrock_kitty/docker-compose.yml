@@ -22,7 +22,7 @@ services:
   
   backup:
     image: kaiede/minecraft-bedrock-backup
-    container_name: backup_mods
+    container_name: backup_hello_kitty
     restart: always
     depends_on:
       - "bds"
