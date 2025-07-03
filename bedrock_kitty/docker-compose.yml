@@ -1,0 +1,36 @@
+services:
+  bds:
+    image: itzg/minecraft-bedrock-server
+    container_name: bds_kitty
+    environment:
+      EULA: "TRUE"
+      GAMEMODE: "creative"        # correct for Bedrock
+      DIFFICULTY: "peaceful"      # also valid for Bedrock
+      allow-flight: "true"
+      ENABLE_CHEATS: "TRUE"
+      ALLOW_LIST_USERS: "ridingintraffic:979dcf0297df3ab7,claracorn4105:87b61eab4e67a2f6,lukey2894:6dd23a63ddd61554"
+      OPS: "979dcf0297df3ab7" 
+      ENABLE_SSH: "TRUE"
+    ports:
+      - "19142:19132/udp"
+      - "2222:2222"
+    ports:
+      - "19132:19132/udp"
+    volumes:
+      - /files-nas20/files/minecraft/bedrock_kitty/data:/data
+    restart: always
+    stdin_open: true
+    tty: true
+  
+  backup:
+    image: kaiede/minecraft-bedrock-backup
+    container_name: backup_mods
+    restart: always
+    depends_on:
+      - "bds"
+    environment:
+      TZ: "America/Chicago"
+    volumes:
+      # Backup config (YAML, schedules, etc.)
+      - /files-nas20/files/minecraft/backups/bedrock_kitty/config:/config
+      - /files-nas20/files/minecraft/bedrock_kitty/data:/data
