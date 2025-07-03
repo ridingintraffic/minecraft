@@ -13,7 +13,6 @@ services:
       ENABLE_SSH: "TRUE"
     ports:
       - "19152:19132/udp"
-      - "2222:2222"
     volumes:
       - /files-nas20/files/minecraft/bedrock_kitty/data:/data
     restart: always
