@@ -11,7 +11,7 @@ services:
       ENABLE_SSH: "TRUE"
       #ALLOW_LIST_USERS: "ridingintraffic:979dcf0297df3ab7,claracorn4105:87b61eab4e67a2f6,lukey2894:6dd23a63ddd61554,2533274818340588,2535440271788039,2535471962177604,ridingintraffic,lukey2894,claracorn4105"
       DEFAULT_PLAYER_PERMISSION_LEVEL : "operator"
-      OPS: "979dcf0297df3ab7,87b61eab4e67a2f6,6dd23a63ddd61554,2533274818340588,2535440271788039,2535471962177604,ridingintraffic,lukey2894,claracorn4105"
+      #OPS: "979dcf0297df3ab7,87b61eab4e67a2f6,6dd23a63ddd61554,2533274818340588,2535440271788039,2535471962177604,ridingintraffic,lukey2894,claracorn4105"
     ports:
       - "19162:19132/udp"
     expose:
