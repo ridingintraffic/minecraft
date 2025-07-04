@@ -1,9 +1,8 @@
-version: "3.8"
 
 services:
   bds:
     image: itzg/minecraft-bedrock-server
-    container_name: bds_mods
+    container_name: bds_mods_02
     environment:
       EULA: "TRUE"
       GAMEMODE: "creative"        # Bedrock-compatible
