@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  bds:
+    image: itzg/minecraft-bedrock-server
+    container_name: bds_mods
+    environment:
+      EULA: "TRUE"
+      GAMEMODE: "creative"        # Bedrock-compatible
+      DIFFICULTY: "peaceful"      # Bedrock-compatible
+      allow-flight: "true"
+      ENABLE_CHEATS: "true"
+      OPS: "979dcf0297df3ab7"
+      ENABLE_SSH: "TRUE"
+    ports:
+      - "19142:19132/udp"
+    expose:
+      - 2222
+    volumes:
+      - /files-nas20/files/minecraft/bedrock_mods_02/data:/data
+    restart: always
+    stdin_open: true
+    tty: true
