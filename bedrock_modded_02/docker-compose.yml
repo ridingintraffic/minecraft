@@ -9,7 +9,7 @@ services:
       DIFFICULTY: "peaceful"      # Bedrock-compatible
       allow-flight: "true"
       ENABLE_CHEATS: "true"
-      OPS: "979dcf0297df3ab7"
+      OPS: "979dcf0297df3ab7,87b61eab4e67a2f6,6dd23a63ddd61554,2533274818340588,2535440271788039,2535471962177604,ridingintraffic,lukey2894,claracorn4105"
       ENABLE_SSH: "TRUE"
     ports:
       - "19172:19132/udp"
