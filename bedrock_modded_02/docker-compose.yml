@@ -12,7 +12,7 @@ services:
       OPS: "979dcf0297df3ab7"
       ENABLE_SSH: "TRUE"
     ports:
-      - "19142:19132/udp"
+      - "19172:19132/udp"
     expose:
       - 2222
     volumes:
