@@ -22,7 +22,6 @@ services:
       CF_API_KEY_FILE: /data/cf_api_key
       CURSEFORGE_FILES: |
         luckytnt   
-      CF_API_KEY_FILE: /run/secrets/cf_api_key
     secrets:
       - cf_api_key    
 
