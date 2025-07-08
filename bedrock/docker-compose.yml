@@ -11,10 +11,25 @@ services:
       #ALLOW_LIST_USERS: "ridingintraffic:979dcf0297df3ab7,claracorn4105:87b61eab4e67a2f6,lukey2894:6dd23a63ddd61554"
       OPS: "979dcf0297df3ab7,87b61eab4e67a2f6,6dd23a63ddd61554,2533274818340588,2535440271788039,2535471962177604,ridingintraffic,lukey2894,claracorn4105"
       ENABLE_SSH: "TRUE"
+    expose:
+      - 2222
     ports:
       - "19132:19132/udp"
+      - "2222:2222"
     volumes:
       - /files-nas20/files/minecraft/bedrock/data:/data
     restart: always
     stdin_open: true
     tty: true
+  backup:
+    image: kaiede/minecraft-bedrock-backup
+    container_name: backup_mods
+    restart: always
+    depends_on:
+      - "bds"
+    environment:
+      TZ: "America/Chicago"
+    volumes:
+      # Backup config (YAML, schedules, etc.)
+      - /files-nas20/files/minecraft/backups/bedrock/config:/config
+      - /files-nas20/files/minecraft/bedrock/data:/data
