@@ -18,10 +18,7 @@ services:
       TYPE: "PAPER"
       PLUGINS: |
         https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/spigot
-        https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/spigot
-      CF_API_KEY: ${CF_API_KEY}
-      CURSEFORGE_FILES: |
-        mc-mods/luckytnt       
+        https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/spigot     
 
     restart: always
     volumes:
