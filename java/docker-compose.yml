@@ -13,7 +13,7 @@ services:
       MODE: "creative"
       GAMEMODE: "creative"
       ENABLE_RCON: "false"
-      OPS: "dbb3f9a2-f031-409a-9449-77707eff0095,00000000-0000-0000-0009-000001aa66ec", 
+      OPS: "dbb3f9a2-f031-409a-9449-77707eff0095,00000000-0000-0000-0009-000001aa66ec"
       ENABLE_CHEATS: "true"
       TYPE: "PAPER"
       PLUGINS: |
