@@ -13,6 +13,7 @@ services:
       MODE: "creative"
       GAMEMODE: "creative"
       ENABLE_RCON: "false"
+      OPS: "979dcf0297df3ab7,87b61eab4e67a2f6,6dd23a63ddd61554,2533274818340588,2535440271788039,2535471962177604,ridingintraffic,lukey2894,claracorn4105,.ridingintraffic, riding1ntraffic"
       ENABLE_CHEATS: "true"
       TYPE: "PAPER"
       PLUGINS: |
