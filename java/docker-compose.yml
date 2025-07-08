@@ -5,6 +5,7 @@ services:
     stdin_open: true
     ports:
       - "25565:25565"
+      - "19192:19132/udp"
     environment:
       EULA: "TRUE"
       allow-flight: "TRUE"
