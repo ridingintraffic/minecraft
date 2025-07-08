@@ -21,9 +21,15 @@ services:
         https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/spigot
       CF_API_KEY_FILE: /data/cf_api_key
       CURSEFORGE_FILES: |
-        luckytnt       
+        luckytnt   
+      CF_API_KEY_FILE: /run/secrets/cf_api_key
+    secrets:
+      - cf_api_key    
 
     restart: always
     volumes:
       # attach the relative directory 'data' to the container's /data path
       - /files-nas20/files/minecraft/java/data:/data
+secrets:
+  cf_api_key:
+    file: /data/cf_api_key
