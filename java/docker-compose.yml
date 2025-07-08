@@ -31,4 +31,4 @@ services:
       - /files-nas20/files/minecraft/java/data:/data
 secrets:
   cf_api_key:
-    file: /data/cf_api_key
+    file: /files-nas20/files/minecraft/java/data/cf_api_key
