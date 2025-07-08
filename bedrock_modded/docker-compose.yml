@@ -12,6 +12,11 @@ services:
       ENABLE_CHEATS: "true"
       OPS: "979dcf0297df3ab7"
       ENABLE_SSH: "TRUE"
+      TYPE: "PAPER"
+      PLUGINS: |
+        https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/spigot
+        https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/spigot
+
     ports:
       - "19142:19132/udp"
     expose:
