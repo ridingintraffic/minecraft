@@ -21,7 +21,7 @@ services:
         https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/spigot
       CF_API_KEY: ${CF_API_KEY}
       CURSEFORGE_FILES: |
-        luckytnt       
+        mc-mods/luckytnt       
 
     restart: always
     volumes:
