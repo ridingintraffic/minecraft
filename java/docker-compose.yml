@@ -13,7 +13,6 @@ services:
       MODE: "creative"
       GAMEMODE: "creative"
       ENABLE_RCON: "false"
-      OPS: "ridingintraffic,lukey2894,claracorn4105,.ridingintraffic, riding1ntraffic"
       ENABLE_CHEATS: "true"
       TYPE: "PAPER"
       PLUGINS: |
