@@ -24,4 +24,4 @@ services:
     restart: always
     volumes:
       # attach the relative directory 'data' to the container's /data path
-      - /files-nas20/files/minecraft/java/vanilla/data:/data
+      - /files-nas20/files/minecraft/java/data:/data
