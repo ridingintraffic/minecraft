@@ -19,6 +19,8 @@ services:
 
     ports:
       - "19142:19132/udp"
+      - "25565:25565"
+
     expose:
       - 2222
     volumes:
