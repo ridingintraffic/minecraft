@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  bds:
+  bds_kitty:
     image: itzg/minecraft-bedrock-server
     container_name: bds_kitty
     environment:

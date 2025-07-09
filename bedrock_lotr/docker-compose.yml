@@ -1,5 +1,5 @@
 services:
-  bds:
+  bds_lotr:
     image: itzg/minecraft-bedrock-server
     container_name: bds_lotr
     environment:

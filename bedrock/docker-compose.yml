@@ -21,12 +21,105 @@ services:
     restart: always
     stdin_open: true
     tty: true
+  
+  bds_kitty:
+    image: itzg/minecraft-bedrock-server
+    container_name: bds_kitty
+    environment:
+      EULA: "TRUE"
+      GAMEMODE: "creative"        # Bedrock-compatible
+      DIFFICULTY: "peaceful"      # Bedrock-compatible
+      allow-flight: "true"
+      ENABLE_CHEATS: "true"
+      OPS: "979dcf0297df3ab7,87b61eab4e67a2f6,6dd23a63ddd61554,2533274818340588,2535440271788039,2535471962177604,ridingintraffic,lukey2894,claracorn4105"
+      ENABLE_SSH: "TRUE"
+    ports:
+      - "19152:19132/udp"
+    expose:
+      - 2222
+    volumes:
+      - /files-nas20/files/minecraft/bedrock_kitty/data:/data
+    restart: always
+    stdin_open: true
+    tty: true
+  
+  bds_lotr:
+    image: itzg/minecraft-bedrock-server
+    container_name: bds_lotr
+    environment:
+      EULA: "TRUE"
+      GAMEMODE: "creative"        # Bedrock-compatible
+      DIFFICULTY: "peaceful"      # Bedrock-compatible
+      allow-flight: "true"
+      ENABLE_CHEATS: "true"
+      ENABLE_SSH: "TRUE"
+      DEFAULT_PLAYER_PERMISSION_LEVEL : "operator"
+      OPS: "979dcf0297df3ab7,87b61eab4e67a2f6,6dd23a63ddd61554,2533274818340588,2535440271788039,2535471962177604,ridingintraffic,lukey2894,claracorn4105"
+      ports:
+      - "19162:19132/udp"
+    expose:
+      - 2222
+    volumes:
+      - /files-nas20/files/minecraft/bedrock_lotr/data:/data
+    restart: always
+    stdin_open: true
+    tty: true
+
+  bds_mods:
+    image: itzg/minecraft-bedrock-server
+    container_name: bds_mods
+    environment:
+      EULA: "TRUE"
+      GAMEMODE: "creative"        # Bedrock-compatible
+      DIFFICULTY: "peaceful"      # Bedrock-compatible
+      allow-flight: "true"
+      ENABLE_CHEATS: "true"
+      OPS: "979dcf0297df3ab7,87b61eab4e67a2f6,6dd23a63ddd61554,2533274818340588,2535440271788039,2535471962177604,ridingintraffic,lukey2894,claracorn4105"
+      ENABLE_SSH: "TRUE"
+      TYPE: "PAPER"
+      PLUGINS: |
+        https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/spigot
+        https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/spigot
+
+    ports:
+      - "19142:19132/udp"
+      - "25565:25565"
+
+    expose:
+      - 2222
+    volumes:
+      - /files-nas20/files/minecraft/bedrock_mods/data:/data
+    restart: always
+    stdin_open: true
+    tty: true
+
+  bds_mods_02:
+    image: itzg/minecraft-bedrock-server
+    container_name: bds_mods_02
+    environment:
+      EULA: "TRUE"
+      GAMEMODE: "creative"        # Bedrock-compatible
+      DIFFICULTY: "peaceful"      # Bedrock-compatible
+      allow-flight: "true"
+      ENABLE_CHEATS: "true"
+      OPS: "979dcf0297df3ab7,87b61eab4e67a2f6,6dd23a63ddd61554,2533274818340588,2535440271788039,2535471962177604,ridingintraffic,lukey2894,claracorn4105"
+      ENABLE_SSH: "TRUE"
+    ports:
+      - "19172:19132/udp"
+    expose:
+      - 2222
+    volumes:
+      - /files-nas20/files/minecraft/bedrock_mods_02/data:/data
+    restart: always
+    stdin_open: true
+    tty: true
+
   backup:
     image: kaiede/minecraft-bedrock-backup
     container_name: backup
     restart: always
     depends_on:
-      - "bds"
+      - "bds,bds_mods_02,bds_mods,bds_kitty,bds_lotr"
     environment:
       TZ: "America/Chicago"
     volumes:
