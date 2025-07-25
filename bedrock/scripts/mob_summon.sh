@@ -83,3 +83,4 @@ echo "Summoning $count x $mob near $target_player..."
 for ((i=1; i<=count; i++)); do
   docker exec bds send-command "execute as $target_player at @s run summon $mob ~2 ~ ~"
 done
+  docker exec bds send-command "summon lightning_bolt ~ ~ ~"
