@@ -5,7 +5,7 @@ services:
     environment:
       EULA: "TRUE"
       GAMEMODE: "creative"        # correct for Bedrock
-      DIFFICULTY: "peaceful"      # also valid for Bedrock
+      DIFFICULTY: "easy"      # also valid for Bedrock
       allow-flight: "true"
       ENABLE_CHEATS: "TRUE"
       #ALLOW_LIST_USERS: "ridingintraffic:979dcf0297df3ab7,claracorn4105:87b61eab4e67a2f6,lukey2894:6dd23a63ddd61554"
@@ -21,7 +21,7 @@ services:
     restart: always
     stdin_open: true
     tty: true
-  
+
   bds_kitty:
     image: itzg/minecraft-bedrock-server
     container_name: bds_kitty
@@ -42,7 +42,7 @@ services:
     restart: always
     stdin_open: true
     tty: true
-  
+
   bds_lotr:
     image: itzg/minecraft-bedrock-server
     container_name: bds_lotr
