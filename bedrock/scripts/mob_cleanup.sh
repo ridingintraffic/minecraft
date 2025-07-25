@@ -19,6 +19,7 @@ mobs=(
   wither wither_skeleton
   zoglin zombie
   zombie_villager zombified_piglin
+  enderman ender_dragon
 )
 
 # Print header
