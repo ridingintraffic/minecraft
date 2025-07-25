@@ -29,21 +29,25 @@ select category in "Hostile" "Not Hostile"; do
   fi
 done
 
-# List all mobs in that category
+# List all mobs in two columns if more than 20
 echo
 echo "2. Choose a mob to summon:"
-for ((i=0; i<${#mob_list[@]}; i++)); do
-  printf "%3d. %s\n" $((i+1)) "${mob_list[i]}"
-done
 
-read -p "Enter the number of the mob: " mob_choice
-mob_index=$((mob_choice - 1))
-if [[ $mob_index -ge 0 && $mob_index -lt ${#mob_list[@]} ]]; then
-  mob="${mob_list[$mob_index]}"
-else
-  echo "Invalid mob choice."
-  exit 1
-fi
+half=$(( (${#mob_list[@]} + 1) / 2 ))
+
+for ((i=0; i<half; i++)); do
+  left_index=$i
+  right_index=$((i + half))
+
+  left_entry=$(printf "%3d. %-20s" $((left_index + 1)) "${mob_list[left_index]}")
+
+  if [[ $right_index -lt ${#mob_list[@]} ]]; then
+    right_entry=$(printf "%3d. %s" $((right_index + 1)) "${mob_list[right_index]}")
+    echo "$left_entry $right_entry"
+  else
+    echo "$left_entry"
+  fi
+done
 
 # Number to summon
 read -p "3. How many $mob do you want to summon? " count
