@@ -45,6 +45,7 @@ if [[ $index -ge 0 && $index -lt ${#mobs[@]} ]]; then
   selected_mob="${mobs[$index]}"
   echo "Killing all: $selected_mob"
   docker exec bds send-command "kill @e[type=$selected_mob]"
+  docker exec bsd send-command "summon lightning_bolt ~ ~ ~"
 else
   echo "Invalid selection. Exiting."
 fi
