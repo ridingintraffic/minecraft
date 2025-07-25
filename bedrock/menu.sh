@@ -9,17 +9,21 @@ for script in "${scripts[@]}"; do
   names+=("$(basename "$script")")
 done
 
-# Display numbered list in one or two columns
 echo "Select a script to run:"
 
-for ((i = 0; i < ${#names[@]}; i++)); do
-  left="[$((i + 1))] ${names[i]}"
-  right=""
-  if [[ $i -lt 12 && $((i + 13)) -lt ${#names[@]} ]]; then
-    right="[$((i + 13))] ${names[i + 12]}"
-    printf "%-30s %s\n" "$left" "$right"
-  elif [[ $i -ge 12 ]]; then
-    break
+# Calculate number of rows for 2-column layout
+total=${#names[@]}
+half=$(( (total + 1) / 2 ))
+
+for ((i = 0; i < half; i++)); do
+  left_index=$i
+  right_index=$((i + half))
+
+  left="[$((left_index + 1))] ${names[left_index]}"
+
+  if [[ $right_index -lt $total ]]; then
+    right="[$((right_index + 1))] ${names[right_index]}"
+    printf "%-40s %s\n" "$left" "$right"
   else
     printf "%s\n" "$left"
   fi
