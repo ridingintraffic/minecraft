@@ -1,0 +1,1 @@
+docker exec bds send-command send-command "give lukey2894 command_block"
