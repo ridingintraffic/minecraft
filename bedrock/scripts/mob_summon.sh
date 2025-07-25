@@ -2,7 +2,7 @@
 
 # Define mob categories
 hostile_mobs=(
-  blaze cave_spider creeper drowned elder_guardian endermite enderman evoker ghast guardian
+  blaze cave_spider creeper drowned elder_guardian endermite enderman ender_dragon evoker ghast guardian
   hoglin husk magma_cube phantom piglin piglin_brute pillager ravager shulker
   silverfish skeleton slime spider stray vex vindication_illager vindicator warden
   witch wither wither_skeleton zoglin zombie zombie_villager zombified_piglin
