@@ -49,6 +49,15 @@ for ((i=0; i<half; i++)); do
   fi
 done
 
+read -p "Enter the number of the mob: " mob_choice
+mob_index=$((mob_choice - 1))
+if [[ $mob_index -ge 0 && $mob_index -lt ${#mob_list[@]} ]]; then
+  mob="${mob_list[$mob_index]}"
+else
+  echo "Invalid mob choice."
+  exit 1
+fi
+
 # Number to summon
 read -p "3. How many $mob do you want to summon? " count
 if ! [[ "$count" =~ ^[0-9]+$ ]]; then
