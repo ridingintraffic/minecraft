@@ -35,17 +35,33 @@ for ((i=0; i<${#mobs[@]}; i+=2)); do
   printf "%-30s %s\n" "$left" "$right"
 done
 
+# Add final option for full cleanup
+echo "$(( ${#mobs[@]} + 1 )). Cleanup ALL hostile mobs"
+
 # Prompt for selection
 echo
 read -p "Enter the number of the mob to kill: " choice
 
-# Validate and map to mob
+# Calculate index
 index=$((choice - 1))
+
+# Option: Kill individual mob
 if [[ $index -ge 0 && $index -lt ${#mobs[@]} ]]; then
   selected_mob="${mobs[$index]}"
   echo "Killing all: $selected_mob"
   docker exec bds send-command "kill @e[type=$selected_mob]"
-  docker exec bds send-command "summon lightning_bolt ~ ~ ~"
+
+# Option: Kill all listed mobs
+elif [[ $choice -eq $(( ${#mobs[@]} + 1 )) ]]; then
+  echo "Cleaning up ALL hostile mobs..."
+  cmd=""
+
+  for mob in "${mobs[@]}"; do
+    cmd+="kill @e[type=$mob]; "
+  done
+
+  docker exec bds send-command "$cmd"
+
 else
   echo "Invalid selection. Exiting."
 fi
