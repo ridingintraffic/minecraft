@@ -54,10 +54,9 @@ if [[ $index -ge 0 && $index -lt ${#mobs[@]} ]]; then
 # Option: Kill all listed mobs
 elif [[ $choice -eq $(( ${#mobs[@]} + 1 )) ]]; then
   echo "Cleaning up ALL hostile mobs..."
-  cmd=""
-
   for mob in "${mobs[@]}"; do
-    cmd+="kill @e[type=$mob]; "
+    echo " - Killing $mob"
+    docker exec bds send-command "kill @e[type=$mob]"
   done
 
   docker exec bds send-command "$cmd"
