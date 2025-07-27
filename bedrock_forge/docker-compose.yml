@@ -5,15 +5,18 @@ services:
     container_name: bds_forge
     environment:
       EULA: "TRUE"
+      OVERRIDE_SERVER_PROPERTIES: "TRUE"
       GAMEMODE: "creative"        # Bedrock-compatible
-      DIFFICULTY: "peaceful"      # Bedrock-compatible
+      DIFFICULTY: "easy"      # Bedrock-compatible
       allow-flight: "true"
       ENABLE_CHEATS: "true"
       OPS: "979dcf0297df3ab7,87b61eab4e67a2f6,6dd23a63ddd61554,2533274818340588,2535440271788039,2535471962177604,ridingintraffic,lukey2894,claracorn4105"
       ENABLE_SSH: "TRUE"
+      LEVEL_NAME: "bedrock_level"
       TYPE: "FORGE"
       PLUGINS: |
         https://www.curseforge.com/minecraft/mc-mods/waystones/files/6795521
+        https://www.curseforge.com/minecraft/modpacks/prehistoric-world-dinosaurs-adventure/files/6796771
 
     ports:
       - "19122:19132/udp"
