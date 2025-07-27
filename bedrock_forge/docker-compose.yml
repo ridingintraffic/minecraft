@@ -13,7 +13,7 @@ services:
       ENABLE_SSH: "TRUE"
       TYPE: "FORGE"
       PLUGINS: |
-        https://www.curseforge.com/api/v1/mods/964202/files/6796771/download
+        https://www.curseforge.com/minecraft/mc-mods/waystones/files/6795521
 
     ports:
       - "19122:19132/udp"
