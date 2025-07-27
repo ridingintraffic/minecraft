@@ -1,0 +1,26 @@
+
+services:
+  bds:
+    image: itzg/minecraft-bedrock-server
+    container_name: bds_forge
+    environment:
+      EULA: "TRUE"
+      GAMEMODE: "creative"        # Bedrock-compatible
+      DIFFICULTY: "peaceful"      # Bedrock-compatible
+      allow-flight: "true"
+      ENABLE_CHEATS: "true"
+      OPS: "979dcf0297df3ab7,87b61eab4e67a2f6,6dd23a63ddd61554,2533274818340588,2535440271788039,2535471962177604,ridingintraffic,lukey2894,claracorn4105"
+      ENABLE_SSH: "TRUE"
+      TYPE: "FORGE"
+      PLUGINS: |
+        https://www.curseforge.com/api/v1/mods/964202/files/6796771/download
+
+    ports:
+      - "19122:19132/udp"
+    expose:
+      - 2222
+    volumes:
+      - /files-nas20/files/minecraft/bedrock_forge/data:/data
+    restart: always
+    stdin_open: true
+    tty: true
