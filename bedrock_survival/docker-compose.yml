@@ -1,7 +1,7 @@
 services:
   bds_survival:
     image: itzg/minecraft-bedrock-server
-    container_name: bds
+    container_name: bds_survival
     environment:
       EULA: "TRUE"
       GAMEMODE: "survival"        # correct for Bedrock
