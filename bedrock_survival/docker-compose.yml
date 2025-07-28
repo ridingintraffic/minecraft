@@ -1,0 +1,23 @@
+services:
+  bds_survival:
+    image: itzg/minecraft-bedrock-server
+    container_name: bds
+    environment:
+      EULA: "TRUE"
+      GAMEMODE: "survival"        # correct for Bedrock
+      DIFFICULTY: "peaceful"      # also valid for Bedrock
+      allow-flight: "true"
+      ENABLE_CHEATS: "TRUE"
+      #ALLOW_LIST_USERS: "ridingintraffic:979dcf0297df3ab7,claracorn4105:87b61eab4e67a2f6,lukey2894:6dd23a63ddd61554"
+      OPS: "979dcf0297df3ab7,87b61eab4e67a2f6,6dd23a63ddd61554,2533274818340588,2535440271788039,2535471962177604,ridingintraffic,lukey2894,claracorn4105"
+      ENABLE_SSH: "TRUE"
+    expose:
+      - 2222
+    ports:
+      - "19182:19132/udp"
+    volumes:
+      - /files-nas20/files/minecraft/bedrock_survival/data:/data
+    restart: always
+    stdin_open: true
+    tty: true
+

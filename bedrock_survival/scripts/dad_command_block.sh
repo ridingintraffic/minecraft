@@ -1,0 +1,1 @@
+docker exec bds send-command send-command "give ridingintraffic command_block"

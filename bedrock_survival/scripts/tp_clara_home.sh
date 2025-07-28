@@ -1,0 +1,1 @@
+docker exec bds send-command "tp claracorn4105 0 75 0"
